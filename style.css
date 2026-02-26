@@ -3,6 +3,10 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px; /* Ajuste isso conforme a altura do seu menu */
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 /* Resto do seu CSS que fizemos antes... */
 
@@ -108,7 +112,7 @@ h1 {
     font-style: italic;
     font-weight: 300;
     color: #c5a059;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 /* --- CONTEÚDO PRINCIPAL --- */
@@ -191,6 +195,101 @@ h2 {
 .photo-card:hover {
     border-color: #c5a059; /* Destaque dourado no hover */
 }
+/* --- SEÇÃO DE DEPOIMENTOS --- */
+.testimonials {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Para quebrar linha no celular */
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    border-color: #c5a059;
+}
+
+.testimonial-card i {
+    color: #c5a059;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.testimonial-card h4 {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+}
+
+.stars {
+    color: #c5a059;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+/* Ajuste para o menu âncora */
+#depoimentos {
+    scroll-margin-top: 100px;
+}
+/* Ícone no Menu */
+.insta-icon i {
+    font-size: 1.2rem;
+    color: #c5a059; /* Cor dourada para combinar com o menu */
+    transition: 0.3s;
+}
+
+.insta-icon:hover i {
+    color: #e1306c; /* Cor clássica do Instagram no hover */
+}
+
+/* Seção de Chamada para o Instagram */
+.instagram-call {
+    text-align: center;
+    padding: 40px 20px;
+    background: #121212;
+}
+
+.btn-insta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-insta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+}
 
 
 .whatsapp-btn {
@@ -246,7 +345,7 @@ h2 {
     padding: 40px;
     background: #000;
     color: #666;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 /* Esconde o hambúrguer por padrão no Desktop */
 .hamburger {
@@ -331,6 +430,40 @@ h2 {
     /* 5. Logo: Centralizamos ela no topo do menu */
     .logo {
         margin-bottom: 10px;
+    }
+}
+@media (max-width: 768px) {
+    /* Garante que o texto das seções não encoste na borda do celular */
+    section {
+        padding: 40px 15px; 
+    }
+
+    /* Ajusta os títulos para não ficarem gigantes no mobile */
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    /* --- Ajuste da Galeria --- */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 fotos por linha no celular fica ótimo */
+        gap: 10px;
+    }
+
+    /* --- Ajuste dos Depoimentos --- */
+    .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-card {
+        width: 100%; /* O card ocupa a largura total disponível */
+        max-width: 350px;
+    }
+
+    /* --- Ajuste do Instagram --- */
+    .instagram-call h3 {
+        font-size: 1.5rem;
     }
 }
 

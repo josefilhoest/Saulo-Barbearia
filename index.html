@@ -25,6 +25,7 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#servicos">Serviços</a>
                 <a href="#portfolio">Portfólio</a>
+                <a href="#depoimentos">Depoimentos</a>
                 <a href="#contato">Contato</a>
             </div>
         </menu>
@@ -101,6 +102,13 @@
             <p>Email: 8D9lO@example.com</p>
         </section>
     </main>
+    <section class="instagram-call">
+    <h3>Veja mais do nosso trabalho</h3>
+    <p>Siga-nos no Instagram e fique por dentro das tendências.</p>
+    <a href="https://www.instagram.com/saulo_barberia/" target="_blank" class="btn-insta">
+        <i class="fab fa-instagram"></i> @saulosbarbearia
+    </a>
+</section>
 
     <div class="footer">
         <p>© 2026 Saulos Barbearia. Todos os direitos reservados.</p>
@@ -131,7 +139,11 @@
                         navLinks.classList.remove('active');
                     });
                 });
-            }
+            }window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        navLinks.classList.remove('active');
+    }
+});
         });
     </script>
 </body>
