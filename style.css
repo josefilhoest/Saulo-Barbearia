@@ -1,0 +1,346 @@
+/* Isso faz a página deslizar suavemente */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Ajuste isso conforme a altura do seu menu */
+}
+
+/* Resto do seu CSS que fizemos antes... */
+
+/* Importando uma fonte elegante do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212; /* Fundo escuro elegante */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* --- MENU --- */
+menu {
+    display: flex;
+    justify-content: space-between; /* Empurra a logo pra esquerda e links pra direita */
+    align-items: center; /* Alinha todo mundo no meio verticalmente */
+    padding: 15px 50px;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 90px; /* Altura fixa para o menu */
+    border-bottom: 1px solid #c5a059;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #c5a059;
+    object-fit: cover;
+    /* Removido: position: absolute, top e left */
+    transition: transform 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px; /* Espaço entre os links */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c5a059;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+menu a:hover {
+    color: #c5a059;
+}
+
+/* --- HEADER / HERO --- */
+.container {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
+    border-bottom: 4px solid #c5a059;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.slogam {
+    font-style: italic;
+    font-weight: 300;
+    color: #c5a059;
+    font-size: 1.2rem;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+main {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: #1e1e1e;
+    border-radius: 8px;
+    border-left: 5px solid #c5a059;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #c5a059;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/* --- ESTILO SERVIÇOS --- */
+.services ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.services li {
+    background: #282828;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.services li:hover {
+    background: #c5a059;
+    color: #000;
+    font-weight: bold;
+    transform: translateY(-5px);
+}
+/* --- GALERIA DE FOTOS --- */
+.portfolio {
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.photo-card {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid #333;
+    height: 250px;
+    transition: border-color 0.3s;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem preencher o quadrado sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1); /* Efeito de zoom */
+}
+
+.photo-card:hover {
+    border-color: #c5a059; /* Destaque dourado no hover */
+}
+
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* Verde oficial do WhatsApp */
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-btn i {
+    font-size: 1.5rem;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+/* Animação de pulso discreta */
+@keyframes pulse-whatsapp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Esconder o texto em telas muito pequenas (opcional) */
+@media (max-width: 480px) {
+    .whatsapp-btn span {
+        display: none;
+    }
+    .whatsapp-btn {
+        padding: 15px;
+        border-radius: 50%;
+    }
+}
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 40px;
+    background: #000;
+    color: #666;
+    font-size: 0.8rem;
+}
+/* Esconde o hambúrguer por padrão no Desktop */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: #c5a059;
+    cursor: pointer;
+}
+
+/* --- AJUSTES PARA CELULAR --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Mostra o ícone no celular */
+    }
+
+    .nav-links {
+        display: none; /* Esconde os links por padrão */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 90px; /* Logo abaixo do menu */
+        left: 0;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #c5a059;
+    }
+
+    /* Classe que o JavaScript vai adicionar para mostrar o menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    menu {
+        justify-content: space-between;
+        padding: 10px 30px;
+    }
+}
+
+/* --- RESPONSIVIDADE (Celulares e Tablets) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Menu: Transformamos em coluna para não apertar os nomes */
+    menu {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap; /* Se os nomes forem grandes, eles quebram linha */
+        justify-content: center;
+    }
+
+    /* 2. Header: Diminuímos o tamanho da letra para não quebrar o layout */
+    h1 {
+        font-size: 2.2rem;
+        padding: 0 10px;
+    }
+
+    .slogam {
+        font-size: 1rem;
+    }
+
+    /* 3. Seções: Reduzimos as margens laterais */
+    main {
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    /* 4. Galeria: Forçamos 1 ou 2 colunas dependendo do espaço */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    /* 5. Logo: Centralizamos ela no topo do menu */
+    .logo {
+        margin-bottom: 10px;
+    }
+}
+
+/* Ajustes extras para telas muito pequenas (iPhone SE, etc) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+}
