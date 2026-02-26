@@ -14,7 +14,6 @@
 <body>
     <nav>
         <menu>
-            <img src="./img/logo saulo barbearia.png" alt="Logo Saulos Barbearia" class="logo">
 
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
@@ -32,7 +31,10 @@
     </nav>
 
     <header id="home" class="container">
+        <div class="header-content">
+        <img src="./img/logo saulo barbearia.png" alt="Logo Saulos Barbearia" class="logo">
         <h1>Bem vindo a Saulos Barbearia</h1>
+        </div>
         <p class="slogam">“Transformando cortes em confiança.”</p>
     </header>
 
@@ -103,12 +105,12 @@
         </section>
     </main>
     <section class="instagram-call">
-    <h3>Veja mais do nosso trabalho</h3>
-    <p>Siga-nos no Instagram e fique por dentro das tendências.</p>
-    <a href="https://www.instagram.com/saulo_barberia/" target="_blank" class="btn-insta">
-        <i class="fab fa-instagram"></i> @saulosbarbearia
-    </a>
-</section>
+        <h3>Veja mais do nosso trabalho</h3>
+        <p>Siga-nos no Instagram e fique por dentro das tendências.</p>
+        <a href="https://www.instagram.com/saulo_barberia/" target="_blank" class="btn-insta">
+            <i class="fab fa-instagram"></i> @saulosbarbearia
+        </a>
+    </section>
 
     <div class="footer">
         <p>© 2026 Saulos Barbearia. Todos os direitos reservados.</p>
@@ -139,11 +141,11 @@
                         navLinks.classList.remove('active');
                     });
                 });
-            }window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        navLinks.classList.remove('active');
-    }
-});
+            } window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
